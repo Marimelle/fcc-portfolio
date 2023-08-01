@@ -1,5 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Poppins:wght@300;400;500;600;700&display=swap');
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+:root {
+  --dark-color: rgb(39, 40, 41);
+  --light-color: rgb(255, 249, 235);
+  --accent-color: rgb(255, 193, 175);
+  --serif: Fraunces, serif;
+  --sans-serif: Poppins, sans-serif;
+  --logo-font: 'Berkshire Swash', serif;
+  font: 300 16px / 1.4 var(--sans-serif);
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+em {
+  color: var(--accent-color);
 }
