@@ -14,27 +14,28 @@
   box-sizing: border-box;
 }
 :root {
-  --dark-color: rgb(39, 40, 41);
+  --dark-color: rgb(173, 0, 101);
   --light-color: rgb(255, 249, 235);
-  --accent-color: rgb(255, 193, 175);
+  --accent-color: rgb(255, 245, 112);
   --serif: Fraunces, serif;
   --sans-serif: Poppins, sans-serif;
   --logo-font: 'Berkshire Swash', serif;
-  font: 300 16px / 1.4 var(--sans-serif);
-  background-color: var(--dark-color);
+  font: 300 16px / 1.5 var(--sans-serif);
+  background-color: black;
   color: var(--light-color);
   scroll-behavior: smooth;
 }
 body::before {
   content: "";
-  background-image: url(https://images.pexels.com/photos/4816921/pexels-photo-4816921.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background: url(https://images.pexels.com/photos/4816921/pexels-photo-4816921.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1), black;
+  z-index: -2;
   background-size: cover;
   position: fixed;
-  right: 0;
   top: 0;
-  min-width: 100vw;
+  min-width: 100%;
   height: 100vh;
-  filter: brightness(10%);
+  opacity: 0.1;
+  filter: blur(2px);
 }
 main {
   animation: 1.5s fade-in forwards ease-in-out;
@@ -42,12 +43,13 @@ main {
 header,
 #navbar,
 #projects,
-#contact-links {
+#contact-links,
+footer {
   display: flex;
   flex-flow: row wrap;
-  gap: 2vw;
+  gap: 4vw;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
 }
 ul {
@@ -58,6 +60,7 @@ a {
   color: inherit;
 }
 em {
+  font-style: normal;
   color: var(--accent-color);
 }
 #logo {
@@ -65,16 +68,19 @@ em {
   text-shadow: 2px 1px 0 var(--dark-color),
   3px 1px 0 #ff9393;
   font: 600 normal 2rem var(--serif);
+  margin-right: auto;
 }
 h1 {
-  font: 600 normal max(5vw, 3rem) var(--serif);
-  text-shadow: 2px 1px 0 var(--dark-color),
+  font: 600 normal max(6vw, 3rem) / 1.4 var(--serif);
+  text-shadow: 2px 1px 0 black,
   3px 1px 0 #ff9393;
   margin: 1rem 0;
 }
 
 h2 {
   font-size: clamp(1.6rem, 3vw, 5rem);
+  width: 100%;
+  text-align: center;
   font-family: var(--serif);
   font-weight: 500;
 }
@@ -83,22 +89,36 @@ h3 {
   font-family: var(--serif);
   font-weight: 500;
 }
-.welcome p {
-  font-size: max(3vw, 1.5rem);
-}
 header {
   position: fixed;
+  align-items: center;
   z-index: 10;
   top: 0;
-  padding: 1rem 10%;
+  padding: 0.8rem 10%;
   background-color: var(--dark-color);
-  border-bottom: 1px solid rgba(255, 227, 232, 0.555);
+  
 }
 section {
-  padding: 5rem 10% 3rem;
-  margin-top: -2rem;
+  padding: 5rem 10% 6rem;
+  margin-top: -5rem;
   position: relative;
 }
-section:first-of-type {
-  margin-top: 3rem;
+#welcome-section {
+  margin: auto 0;
+  padding-top: 15rem;
+  max-width: 950px;
+  height: 100vh;
+}
+#welcome-section p {
+  font-size: max(3vw, 1.5rem);
+}
+article {
+  max-width: 350px;
+  min-width: 200px;
+  width: 100%;
+  flex: 1;
+}
+article img {
+  width: 100%;
+  border-radius: 10px;
 }
