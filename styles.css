@@ -60,3 +60,45 @@ a {
 em {
   color: var(--accent-color);
 }
+#logo {
+  color: var(--light-color);
+  text-shadow: 2px 1px 0 var(--dark-color),
+  3px 1px 0 #ff9393;
+  font: 600 normal 2rem var(--serif);
+}
+h1 {
+  font: 600 normal max(5vw, 3rem) var(--serif);
+  text-shadow: 2px 1px 0 var(--dark-color),
+  3px 1px 0 #ff9393;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 5rem);
+  font-family: var(--serif);
+  font-weight: 500;
+}
+h3 {
+  font-size: clamp(1.3rem, 2vw, 1.5rem);
+  font-family: var(--serif);
+  font-weight: 500;
+}
+.welcome p {
+  font-size: max(3vw, 1.5rem);
+}
+header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  padding: 1rem 10%;
+  background-color: var(--dark-color);
+  border-bottom: 1px solid rgba(255, 227, 232, 0.555);
+}
+section {
+  padding: 5rem 10% 3rem;
+  margin-top: -2rem;
+  position: relative;
+}
+section:first-of-type {
+  margin-top: 3rem;
+}
