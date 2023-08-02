@@ -14,9 +14,10 @@
   box-sizing: border-box;
 }
 :root {
-  --dark-color: rgb(173, 0, 101);
+  --dark-color: rgb(109, 0, 51);
   --light-color: rgb(255, 249, 235);
   --accent-color: hsl(59, 100%, 70%);
+  --pink: #ff9393;
   --serif: 'Noto Serif', Fraunces, serif;
   --sans-serif: Poppins, sans-serif;
   font: 300 16px / 1.5 var(--sans-serif);
@@ -46,17 +47,26 @@ header,
 footer {
   display: flex;
   flex-flow: row wrap;
-  gap: 4vw;
+  gap: 5%;
   justify-content: center;
   align-items: stretch;
   width: 100%;
 }
-ul {
+ul#navbar {
   list-style-type: none;
+  flex-flow: row nowrap;
+  gap: 4vw;
+  
 }
 a {
   text-decoration: none;
   color: inherit;
+}
+#navbar a:hover,
+#navbar a:active {
+  transition: all 0.2s linear;
+  font-weight: bold;
+  border-bottom: 3px solid var(--light-color);
 }
 em {
   font-style: normal;
@@ -65,15 +75,14 @@ em {
 #logo {
   color: var(--light-color);
   text-shadow: 2px 1px 0 var(--dark-color),
-  3px 1px 0 #ff9393;
+  3px 1px 0 var(--pink);
   font: 600 normal 2rem var(--serif);
-  margin-right: auto;
 }
 h1 {
   position: relative;
-  font: 600 normal max(6vw, 3.5rem) / 1.1 var(--serif);
+  font: 600 normal max(5vw, 3rem) / 1.1 var(--serif);
   text-shadow: 2px 0 0 black,
-  3px 0 0 #ff9393;
+  3px 0 0 var(--pink);
   margin: 0;
 }
 h1::after {
@@ -85,21 +94,24 @@ h1::after {
   animation: fade-in 1s infinite ease-in-out alternate;
 }
 h2 {
-  font-size: clamp(1.9rem, 3vw, 4rem);
+  font-size: max(2rem, min(3vw, 4rem));
+  font-size: clamp(2rem, 3vw, 4rem);
   width: 100%;
   text-align: center;
   font-family: var(--serif);
   font-weight: 600;
-  margin: 1rem 0;
+  margin: 1rem 0 2rem;
 }
 h3 {
-  font-size: clamp(1.4rem, 2.5vw, 1.5rem);
+  font-size: max(1.3rem, min(2.5vw, 1.5rem));
+  font-size: clamp(1.3rem, 2.5vw, 1.5rem);
   font-family: var(--serif);
   font-weight: 400;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
 header {
   position: fixed;
+  justify-content: space-between;
   align-items: center;
   z-index: 10;
   top: 0;
@@ -108,7 +120,7 @@ header {
   font: 400 normal 1rem var(--sans-serif);
 }
 section {
-  padding: 5rem 10% 6rem;
+  padding: 5rem 10% 5rem;
   margin-top: -5rem;
   position: relative;
 }
@@ -122,46 +134,54 @@ section {
   min-height: 110vh;
 }
 #welcome-section p {
-  font-size: max(2.8vw, 1.2rem);
+  font-size: max(2.8vw, 1.3rem);
   line-height: 2;
+  max-width: 70%;
 }
 article {
-  max-width: 350px;
-  min-width: 280px;
+  max-width: 300px;
+  min-width: 250px;
   width: 100%;
   flex: 1;
   text-align:center;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   border-radius: 10px;
-}
-article img:hover{
-  transform: scale(105%);
-  padding: 2px;
-  outline: 2px solid var(--accent-color);
 }
 article img {
   width: 100%;
   border-radius: 10px;
 }
+article img:hover,
+article img:active {
+  transition: all 0.3s ease-in-out;
+  outline: 2px solid var(--accent-color);
+  padding: 2px;
+  transform: scale(105%);
+}
 #contact-links p,
-footer p{
+footer p {
   text-align: center;
+  margin: 4px 0;
 }
 #contact-links p {
-  width: 45%;
-  min-width: 200px;
-  max-width: 200px;
+  width: 40%;
+  min-width: 190px;
+  max-width: 250px;
   border: 3px solid var(--light-color);
   color: var(--light-color);
   border-radius: 20px;
   font: 400 1.15rem var(--sans-serif);
   display: flex;
 }
+#contact-links  {
+  margin-bottom: 40%;
+}
 #contact-links a {
   flex: 1;
   padding: 1rem;
 }
 #contact-links p:hover {
+  transition: all .3s ease-in-out;
   border: 3px solid var(--accent-color);
   background-color: var(--accent-color);
   color: black;
@@ -172,14 +192,10 @@ footer {
   padding: 0.4rem 10%;
   justify-content: space-between;
   background-color: rgb(29, 29, 29);
+  text-align: center;
 }
 
-@media screen and (max-width: 700px ) {
-  article {
-    max-width: 280px;
-  }
-}
-@media screen and (max-width: 500px ) {
+@media screen and (max-width: 550px ) {
   :root {
     font-size: 15px;
   }
@@ -189,5 +205,40 @@ footer {
     padding-left: max(5%, 2rem);
     padding-right: max(5%, 2rem);
   }
-
+}
+@media screen and (max-width: 350px) {
+  :root {
+    font-size: 14px;
+  }
+  body {
+    min-width: 250px;
+    overflow:auto;
+  }
+  header {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+  ul#navbar {
+    align-items: center;
+  }
+  #logo {
+    font-size: 1.8rem;
+  }
+  article {
+    min-width: 150px;
+  }
+  h1 {
+    font-size: max(5vw, 2.8rem);
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
