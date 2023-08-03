@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Domine:wght@600;700&family=Noto+Serif:wght@300;400;500;600&family=Merriweather:wght@400;700&family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @keyframes fade-in {
   0%{
@@ -118,6 +118,7 @@ header {
   padding: 0.8rem 10%;
   background-color: var(--dark-color);
   font: 400 normal 1rem var(--sans-serif);
+  min-width: 250px;
 }
 section {
   padding: 5rem 10% 5rem;
@@ -131,7 +132,7 @@ section {
   justify-content: center;
   align-items: flex-start;
   max-width: 1100px;
-  min-height: 110vh;
+  height: 100vh;
 }
 #welcome-section p {
   font-size: max(2.8vw, 1.3rem);
@@ -174,7 +175,7 @@ footer p {
   display: flex;
 }
 #contact-links  {
-  margin-bottom: 40%;
+  margin-bottom: 6rem;
 }
 #contact-links a {
   flex: 1;
@@ -218,9 +219,6 @@ footer {
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
   }
-  ul#navbar {
-    align-items: center;
-  }
   #logo {
     font-size: 1.8rem;
   }
@@ -236,6 +234,9 @@ footer {
   h3 {
     font-size: 1.1rem;
   }
+#contact-links p {
+  font-size: 1rem;
+}
   footer {
     display: flex;
     flex-direction: column;
